@@ -1,29 +1,7 @@
-var obj = {
-    string: 'Vasya',
-    number: 30,
-    boolean: true,
-    undefined: undefined,
-    null: null,
-    array: [1, 2, 3],
-    object: {
-        string2: 'Petrov',
-        object2: {
-            array2: [{}, {}]
-        },
-        object3: {}
-    },
-    method: function () {
-        alert('Hello');
-    }
-};
-
-
 function deepClone(originObject) {
     var cloneObject = {};
-    console.log(originObject);
     for (var key in originObject) {
         if ((typeof originObject[key] != 'object') || (originObject[key] == null)) {
-            console.log(originObject[key]);
             cloneObject[key] = originObject[key];
         } else if (Array.isArray(originObject[key])) {
             cloneObject[key] = cloneArray(originObject[key]);
@@ -48,6 +26,27 @@ function cloneArray(originArray) {
     return clonedArray;
 }
 
+
+var obj = {
+    string: 'Vasya',
+    number: 30,
+    boolean: true,
+    undefined: undefined,
+    null: null,
+    array: [1, 2, 3],
+    object: {
+        string2: 'Petrov',
+        object2: {
+            array2: [{}, {}]
+        },
+        object3: {}
+    },
+    method: function () {
+        alert('Hello');
+    }
+};
+
+
 var clone = deepClone(obj);
 
 clone.object.object2.array2[1].name = 'Vasya';
@@ -55,4 +54,3 @@ clone.array.push(2);
 
 console.log(obj);
 console.log(clone);
-
