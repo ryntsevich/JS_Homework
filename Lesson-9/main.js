@@ -84,11 +84,12 @@ Cat.prototype = Object.create(Animal.prototype);
 Cat.prototype.constructor = Cat;
 
 Cat.prototype.feed = function() {
-  Animal.prototype.feed.apply(this);
-  console.log('Кот доволен ^_^');
-
-  return this;
-}
+  var animalFeed = Animal.prototype.feed.apply(this, arguments);
+    console.log(animalFeed);
+    console.log( 'Кот доволен ^_^');
+  
+    return this;
+  }
 
 Cat.prototype.stroke = function() {
   console.log('Гладим кота.');
