@@ -10,14 +10,14 @@ block.appendChild(clonedNewParagraph);
 var button = document.getElementsByTagName('button')[0];
 button.onmousedown = function() {
     var linkNewParagraph = newParagraph.children;
-    for (i = 0; i < linkNewParagraph.length; i++) {
+    for (var i = 0; i < linkNewParagraph.length; i++) {
         linkNewParagraph[i].className = 'linkNewParagraph';
     }
 
 }
 
 var linkCloneNewParagraph = clonedNewParagraph.children;
-for (i = 0; i < linkCloneNewParagraph.length; i++) {
+for (var i = 0; i < linkCloneNewParagraph.length; i++) {
     linkCloneNewParagraph[i].addEventListener('click', function(event) {
         event.preventDefault();
         var target = event.target;
