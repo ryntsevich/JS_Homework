@@ -1,0 +1,41 @@
+.form__item {
+    text-align:right;
+    line-height:25px;
+    padding: 5px;
+}
+
+label {
+    float:left;
+    padding-right:10px;
+    font-weight: bold;
+
+}
+
+
+button {
+    float:left;
+    width: 70px;
+    margin-left: 27px;
+    margin-bottom: 10px;
+}
+
+#form {
+    float:left;
+    /* width: 250px; */
+}
+
+table {
+    clear: both;
+    border-collapse: collapse;
+    margin-left: 32px;
+}
+
+td {
+    width: 15px;
+    height: 15px;
+    border: 1px solid black;
+}
+
+.black {
+    background-color: rgb(8, 7, 7);
+}
