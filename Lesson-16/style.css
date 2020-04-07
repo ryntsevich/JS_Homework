@@ -1,0 +1,95 @@
+body {
+    font-family: sans-serif;
+    color: white;
+    font-weight: bold;
+}
+
+#container {
+    margin: 0 auto;
+    width: 700px;
+    margin-top: 100px;
+
+}
+
+.users-info {
+    display: none;
+    background-color: rgb(131, 179, 7);
+    width: 100%;
+    height: 150px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+
+}
+
+.visibility {
+    display: block;
+}
+
+.visibility-error {
+    display: block;
+    background-color: white;
+    border: 3px solid red;
+}
+
+.button-error {
+    background-color: red;
+    color:white;
+
+}
+
+.users-tabs {
+    height: 30px;
+}
+
+button {
+    float: right;
+    width: 177px;
+    margin-top: 4px;
+    padding: 2px;
+    background-color: rgba(211, 255, 97, 0.87);
+    color: rgb(47, 114, 16)
+}
+
+.tab {
+    width: 12%;
+    height: 100%;
+    display: inline-block;
+    background-color: rgba(211, 255, 97, 0.87);
+    border-top-left-radius: 30%;
+    border-top-right-radius: 30%;
+    margin-right: 3px;
+    text-align: center;
+    line-height: 35px;
+    cursor: pointer;
+}
+
+.tab-active {
+    background-color: rgb(131, 179, 7);
+}
+
+.users-info__image {
+    float: left;
+    width: 128px;
+    height: 128px;
+    margin-left: 20px;
+    margin-top: 10px;
+
+}
+
+.users-info__text {
+    display: inline-block;
+    margin-left: 30px;
+    margin-top: 30px;
+
+}
+
+.error {
+    text-align: center;
+}
+
+.error p {
+    font-size: 25px;
+    padding-top: 25px;
+    margin: 0;
+    color: red;
+}
