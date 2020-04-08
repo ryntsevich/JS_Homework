@@ -53,7 +53,7 @@ button.addEventListener('click', function () {
         }
         document.getElementById('0').className += ' tab-active';
 
-        tabs.addEventListener('click', function (event) {
+        tabs.addEventListener('click', function(event) {
             var target = event.target;
             var allTabs = document.querySelectorAll('.tab');
             for (i = 0; i < allTabs.length; i++) {
@@ -62,7 +62,6 @@ button.addEventListener('click', function () {
             if (target.className === 'tab') {
                 target.className += ' tab-active';
             }
-
 
             switch (target.id) {
                 case '0':
@@ -128,10 +127,6 @@ button.addEventListener('click', function () {
             button.disabled = true;
             var users = document.querySelector('.users-info');
             users.insertAdjacentHTML('beforeend', '<div class="error"><p>Error ' + this.status + '</p><p>No data received</p></div>');
-        };
-
-        request.onloadend = function () {
-            console.log('Запрос завершен');
         };
     }
 });
