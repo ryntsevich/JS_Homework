@@ -2,7 +2,6 @@ var button = document.querySelector('button');
 
 button.addEventListener('click', function () {
     if (localStorage.getItem('arrUsers')) {
-        alert('Информация о запросе уже сохранена');
         var arrUsers = JSON.parse(localStorage.getItem('arrUsers'));
 
         var tabs = document.querySelector('.users-tabs'),
@@ -39,7 +38,7 @@ button.addEventListener('click', function () {
         }
 
 
-        document.querySelector('.users-info').className += " visibility";
+        document.querySelector('.users-info').className += ' visibility';
 
         if (document.querySelector('.tab')) {
             tabs.innerHTML = '';
@@ -53,54 +52,26 @@ button.addEventListener('click', function () {
         }
         document.getElementById('0').className += ' tab-active';
 
-        tabs.addEventListener('click', function(event) {
+        tabs.addEventListener('click', function (event) {
             var target = event.target;
             var allTabs = document.querySelectorAll('.tab');
-            for (i = 0; i < allTabs.length; i++) {
+            for (var i = 0; i < allTabs.length; i++) {
                 allTabs[i].className = allTabs[i].className.replace(' tab-active', '');
             }
             if (target.className === 'tab') {
                 target.className += ' tab-active';
             }
 
-            switch (target.id) {
-                case '0':
-                    if (users.childNodes) {
-                        users.innerHTML = '';
-                    }
-                    users.insertAdjacentHTML('beforeend', '<div class="users-info__image"><img src =' + arrAvatars[0] + '></div><div class = "users-info__text"><p>First Name: ' + arrNames[0] + ' </p><p>Last Name: ' + arrLastNames[0] + '</p></div>');
-                    break;
-                case '1':
-                    if (users.childNodes) {
-                        users.innerHTML = '';
-                    }
-                    users.insertAdjacentHTML('beforeend', '<div class="users-info__image"><img src =' + arrAvatars[1] + '></div><div class = "users-info__text"><p>First Name: ' + arrNames[1] + ' </p><p>Last Name: ' + arrLastNames[1] + '</p></div>');
-                    break;
-                case '2':
-                    if (users.childNodes) {
-                        users.innerHTML = '';
-                    }
-                    users.insertAdjacentHTML('beforeend', '<div class="users-info__image"><img src =' + arrAvatars[2] + '></div><div class = "users-info__text"><p>First Name: ' + arrNames[2] + ' </p><p>Last Name: ' + arrLastNames[2] + '</p></div>');
-                    break;
-                case '3':
-                    if (users.childNodes) {
-                        users.innerHTML = '';
-                    }
-                    users.insertAdjacentHTML('beforeend', '<div class="users-info__image"><img src =' + arrAvatars[3] + '></div><div class = "users-info__text"><p>First Name: ' + arrNames[3] + ' </p><p>Last Name: ' + arrLastNames[3] + '</p></div>');
-                    break;
-                case '4':
-                    if (users.childNodes) {
-                        users.innerHTML = '';
-                    }
-                    users.insertAdjacentHTML('beforeend', '<div class="users-info__image"><img src =' + arrAvatars[4] + '></div><div class = "users-info__text"><p>First Name: ' + arrNames[4] + ' </p><p>Last Name: ' + arrLastNames[4] + '</p></div>');
-                    break;
-                case '5':
-                    if (users.childNodes) {
-                        users.innerHTML = '';
-                    }
-                    users.insertAdjacentHTML('beforeend', '<div class="users-info__image"><img src =' + arrAvatars[5] + '></div><div class = "users-info__text"><p>First Name: ' + arrNames[5] + ' </p><p>Last Name: ' + arrLastNames[5] + '</p></div>');
-                    break;
+            for (var i = target.id; i < allTabs.length; i++) {
+                if (users.childNodes) {
+                    users.innerHTML = '';
+                }
+                users.insertAdjacentHTML('beforeend', '<div class="users-info__image"><img src =' + arrAvatars[i] + '></div><div class = "users-info__text"><p>First Name: ' + arrNames[i] + ' </p><p>Last Name: ' + arrLastNames[i] + '</p></div>');
+                break;
             }
+            // if (target == this) {
+            //     users.innerHTML = '';
+            // }
         });
 
     } else {
@@ -111,19 +82,17 @@ button.addEventListener('click', function () {
             var statusType = +String(this.status)[0];
             if (statusType === 2) {
                 localStorage.setItem('arrUsers', JSON.stringify(JSON.parse(this.response).data));
-                alert('Информация о запросе сохранена');
-
             } else {
-                document.querySelector('.users-info').className += " visibility-error";
-                button.className += " button-error";
+                document.querySelector('.users-info').className += ' visibility-error';
+                button.className += ' button-error';
                 button.disabled = true;
                 var users = document.querySelector('.users-info');
                 users.insertAdjacentHTML('beforeend', '<div class="error"><p>Error ' + this.status + '</p><p>No data received</p></div>');
             }
         }
         request.onerror = function () {
-            document.querySelector('.users-info').className += " visibility-error";
-            button.className += " button-error";
+            document.querySelector('.users-info').className += ' visibility-error';
+            button.className += ' button-error';
             button.disabled = true;
             var users = document.querySelector('.users-info');
             users.insertAdjacentHTML('beforeend', '<div class="error"><p>Error ' + this.status + '</p><p>No data received</p></div>');
