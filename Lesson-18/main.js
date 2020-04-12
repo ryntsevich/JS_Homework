@@ -11,4 +11,16 @@ function isValidPhoneNumber(str) {
 console.log(isValidPhoneNumber('+375-25-777-77-77'));
 
 // Task3
+function countVowelLetters(str) {
+    var regexpVowels = /[аеёиоуыэюяaeiouy]/ig,
+        countLetters = str.length;
+    return countLetters - str.replace(regexpVowels, '').length;
+}
+console.log(countVowelLetters('Шла Саша по шоссе И сосала сУшку'));
 
+// Task3_1
+function countVowelLetters(str) {
+    var regexpVowels = /[аеёиоуыэюяaeiouy]/ig;
+    return str.match(regexpVowels) != null ? (str.match(regexpVowels)).length : 'no vowels';
+}
+console.log(countVowelLetters('Шла Саша по шоссе И сосала сУшку'));
