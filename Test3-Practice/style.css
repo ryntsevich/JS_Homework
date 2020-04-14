@@ -1,0 +1,34 @@
+body {
+    font-family: sans-serif;
+}
+
+.form__item {
+    text-align:right;
+    line-height:25px;
+    padding: 5px;
+}
+
+label {
+    float:left;
+    padding-right:10px;
+
+}
+
+button {
+    float:left;
+    width: 70px;
+    margin-left: 27px;
+    margin-bottom: 10px;
+}
+
+#form {
+    float:left;
+}
+
+.message {
+    margin-top: 40px;
+}
+
+.green {
+    border-color: green;
+}
